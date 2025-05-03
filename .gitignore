@@ -3,3 +3,9 @@
 
 
 #files
+data/train/02_optical_train_01.tif
+data/train/02_optical_train_02.tif
+data/train/03_optical_train_01.tif
+data/train/02_sar_train_01.tif
+data/train/02_sar_train_02.tif
+data/train/03_sar_train_01.tif
