@@ -24,7 +24,7 @@ class CModaldata(Dataset):
         self.target_size = 256
         self.crop_size_m = config.data.get("image_size") #this determines the size of crop in meter, we need to decide on image size in pixels
         self.margin_m = 20 #this is the margin in meter to avoid edge effects (i.e. black pixels on corners of sar images)
-        self.dissimialr_dist = 200 #this will control the dissimilar pair (rgb,sar). The value should be choose not very small(close patch) or not very large (far patch). Target is hardnegatives
+        self.dissimialr_dist = 300 #this will control the dissimilar pair (rgb,sar). The value should be choose not very small(close patch) or not very large (far patch). Target is hardnegatives
 
         #debug and visualization
         self.debug_vis = debug_vis 
@@ -52,7 +52,7 @@ class CModaldata(Dataset):
         return self.data_len #this is not actual length of dataset here, but noof steps in training loop, because we are generating data on the fly
 
     def __getitem__(self, index):
-        is_similar = random.choice([False, False]) #randomly choose if the image pair is similar or not. This will be used as label and also to decide how to sample the images
+        is_similar = random.choice([True, False]) #randomly choose if the image pair is similar or not. This will be used as label and also to decide how to sample the images
         
         #get image pair and load
         pair_idx = random.randint(0, len(self.pairs) - 1) 
@@ -126,8 +126,9 @@ class CModaldata(Dataset):
                 
                 #save crops as TIFFs for debug
                 if self.debug_vis:
-                    self.save_crop(sar_np, sar_meta, int(is_similar), "sar")
-                    self.save_crop(rgb_np, rgb_meta, int(is_similar), "rgb")
+                    pair_id = uuid.uuid4().hex[:8]
+                    self.save_crop(sar_np, sar_meta, int(is_similar), "sar", pair_id)
+                    self.save_crop(rgb_np, rgb_meta, int(is_similar), "rgb", pair_id)
                 
 
 
@@ -204,11 +205,11 @@ class CModaldata(Dataset):
             print(f"[read_crop failed]: {e}")
             return None, None, None
     
-    def save_crop(self, img_array, meta, label, band_type): #save the image in geotiff format, redunant once we have debugged the code
+    def save_crop(self, img_array, meta, label, band_type, pair_id):  # <- added pair_id
         if self.vis_dir is None:
             return
 
-        file_id = f"{label}_{band_type}_{uuid.uuid4().hex[:8]}.tif"
+        file_id = f"{label}_{pair_id}_{band_type}.tif"  # consistent base name
         out_path = os.path.join(self.vis_dir, file_id)
 
         meta.setdefault("driver", "GTiff")
@@ -219,7 +220,9 @@ class CModaldata(Dataset):
 
         with rio.open(out_path, "w", **meta) as dst:
             dst.write(img_array)
-        print(f"Saved {band_type.upper()} crop for label={label} at: {out_path}")       
+
+        print(f"Saved {band_type.upper()} crop for label={label} at: {out_path}")
+      
 
 
 def get_dataloader(config, debug_vis=False):
