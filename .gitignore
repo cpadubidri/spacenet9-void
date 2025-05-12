@@ -14,7 +14,7 @@ data/train/03_train_01_patchnewaoi
 data/train/data_list.csv
 docs/space9_v2.pptx
 experiments/test.py
-experiments/test.ipynb
+# experiments/test.ipynb
 
 src/datafeeder/datafeeder_v0.py 
 
