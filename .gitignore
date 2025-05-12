@@ -1,11 +1,22 @@
 #folders
+data/test-data
+data/train/03_train_01_patchnewaoi
 
 
+#tif files
+**.tif
 
-#files
-data/train/02_optical_train_01.tif
-data/train/02_optical_train_02.tif
-data/train/03_optical_train_01.tif
-data/train/02_sar_train_01.tif
-data/train/02_sar_train_02.tif
-data/train/03_sar_train_01.tif
+#metadata
+**.aux.xml
+
+
+#other files
+data/train/data_list.csv
+docs/space9_v2.pptx
+experiments/test.py
+experiments/test.ipynb
+
+src/datafeeder/datafeeder_v0.py 
+
+#cache
+**/__pycache__/

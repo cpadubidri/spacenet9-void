@@ -1,0 +1,12 @@
+
+{
+    "data": {
+        "data_path":"/home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/data/test-data",
+        "image_size": 256,
+        "batch_size": 1,
+        "num_workers": 0,
+        "data_length": 1000
+    }
+
+
+}
