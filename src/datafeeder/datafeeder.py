@@ -129,11 +129,17 @@ class CModaldata(Dataset):
                     pair_id = uuid.uuid4().hex[:8]
                     self.save_crop(sar_np, sar_meta, int(is_similar), "sar", pair_id)
                     self.save_crop(rgb_np, rgb_meta, int(is_similar), "rgb", pair_id)
-                
-
 
                 #stack and return
                 stacked = [rgb_crop, sar_crop]
+
+
+                #pending: need augmentation here
+                '''
+                torch transformations - flip, rotate, color jitter. Dont resize or crop this will kill our sar,rgb pairing
+                also let the sar and rgb be in different dimension, we will handle that in the model    
+                '''
+
                 return stacked, torch.tensor(int(is_similar), dtype=torch.long) #return the stacked image and the label
         
 
