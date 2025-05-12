@@ -1,0 +1,21 @@
+
+{
+    "experiment_name":"samp",
+    "experiment_description":"abc 123",
+    "log_path":"experiments/exp_01/logs",
+    "data": {
+        "data_path":"/home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/data/test-data",
+        "image_size": 312.5,
+        "batch_size": 8,
+        "num_workers": 0,
+        "data_length": 1000
+    },
+    "training":{
+        "loss":"contrastive",
+        "lr":0.001,
+        "epochs":100,
+        "savepath":"/home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01"
+    }
+
+
+}
