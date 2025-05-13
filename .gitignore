@@ -1,7 +1,10 @@
 #folders
 data/test-data
 data/train/03_train_01_patchnewaoi
-
+data/train/keypoint-crps/02_tiepoints_train_01/crops
+data/train/keypoint-crps/02_tiepoints_train_02/crops
+data/train/keypoint-crps/03_tiepoints_train_01/crops
+data/train/keypoint-crps/train-patch
 
 #tif files
 **.tif

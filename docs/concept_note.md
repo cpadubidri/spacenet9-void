@@ -39,3 +39,12 @@ Idea: Use ResNet encoder to learn modality-invariant, spatially-aware embeddings
   - Pass all patches through the encoder to obtain embeddings.
   - Measure cosine similarity with the optical patch embedding.
   - Choose the SAR patch with maximum similarity — this indicates the best match and estimated shift.
+
+
+
+
+
+
+
+#### Notes:
+1. SAR and Optical image are cropped using (156.25*2) meter around the keypoint.
