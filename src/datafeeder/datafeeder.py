@@ -12,6 +12,7 @@ import rasterio as rio
 from rasterio.windows import Window
 from shapely.geometry import box
 import numpy as np
+from rasterio.enums import Resampling
 
 
 class CModaldata(Dataset):
@@ -21,6 +22,8 @@ class CModaldata(Dataset):
 
 
         #some important parameters
+        self.target_height = 1024 
+        self.target_width = 1024
         self.target_size = 256
         self.crop_size_m = config.data.get("image_size") #this determines the size of crop in meter, we need to decide on image size in pixels
         self.margin_m = 20 #this is the margin in meter to avoid edge effects (i.e. black pixels on corners of sar images)
@@ -52,7 +55,7 @@ class CModaldata(Dataset):
         return self.data_len #this is not actual length of dataset here, but noof steps in training loop, because we are generating data on the fly
 
     def __getitem__(self, index):
-        is_similar = random.choice([True, False]) #randomly choose if the image pair is similar or not. This will be used as label and also to decide how to sample the images
+        is_similar = random.choice([True, True]) #randomly choose if the image pair is similar or not. This will be used as label and also to decide how to sample the images
         
         #get image pair and load
         pair_idx = random.randint(0, len(self.pairs) - 1) 
@@ -63,6 +66,7 @@ class CModaldata(Dataset):
                 print(f"File exists: {os.path.exists(sar_path)}, {os.path.exists(rgb_path)}")
                 print(f"Loading {sar_path} and {rgb_path}")
             with rio.open(sar_path) as sar_ds, rio.open(rgb_path) as rgb_ds:
+                # sar_ds, rgb_ds = self.resize_dataset(sar_ds), self.resize_dataset(rgb_ds) #resize the images to the target size i.e. 1024x1024
                 sar_bounds = self.get_bounds(sar_ds) #>> use sar to get the bounds, because sar has zero padding
                 rgb_bounds = rgb_ds.bounds
 
@@ -228,6 +232,20 @@ class CModaldata(Dataset):
             dst.write(img_array)
 
         print(f"Saved {band_type.upper()} crop for label={label} at: {out_path}")
+
+    
+    def resize_dataset(self, ds,resampling=Resampling.bilinear):
+        resized_data = ds.read(
+            out_shape=(ds.count, self.target_height, self.target_width),
+            resampling=resampling
+        )
+
+        scale_x = ds.width / self.target_width
+        scale_y = ds.height / self.target_height
+
+        updated_transform = ds.transform * ds.transform.scale(scale_x, scale_y)
+
+        return resized_data, updated_transform
       
 
 

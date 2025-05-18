@@ -10,11 +10,11 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
 class ContrastiveDatafeeder(Dataset):
-    def __init__(self, config, debug=False):
+    def __init__(self, config, mode="Train", debug=False):
         self.debug = debug
         self.data_path = config.data["data_path"]
         self.image_size = config.data["image_size"]
-        self.data_len = config.data["data_length"]
+        
 
         # Load list of image pairs
         data_list = pd.read_csv(os.path.join(self.data_path, 'file_list.csv'))['file_name']
@@ -29,50 +29,99 @@ class ContrastiveDatafeeder(Dataset):
             transforms.ToTensor()
         ])
 
+        self.mode = mode
+        # print(self.mode)
+        if mode == 'valid':
+            # random.seed(42)
+            # np.random.seed(42)
+            self.valid_pts = []
+            num_samples = config.data["val_length"]
+
+            h, w = self.image_size, self.image_size
+
+            for _ in range(num_samples):
+                if random.random() < 0.5:
+                    cx, cy = self.random_point_near_center(h, w, delta=100)
+                    self.valid_pts.append((cx, cy, cx, cy, 1))  # label 1
+                else:
+                    cx1, cy1 = self.random_point_near_center(h, w, delta=100)
+                    cx2, cy2 = self.random_point_near_center(h, w, delta=350)
+                    self.valid_pts.append((cx1, cy1, cx2, cy2, 0))  # label 0
+            self.data_len = config.data["val_length"]
+        else:
+            self.data_len = config.data["data_length"]
+
     def __len__(self):
         return self.data_len
 
     def __getitem__(self, idx):
-        is_similar = random.choice([True, False])
-        pair_idx = random.randint(0, len(self.pairs) - 1)
-        sar_path, rgb_path = self.pairs[pair_idx]
+        if self.mode=="train":        
+            is_similar = random.choice([True, False])
+            pair_idx = random.randint(0, len(self.pairs) - 1)
+            sar_path, rgb_path = self.pairs[pair_idx]
 
-        #read rgb and sar images
-        sar_image = cv2.imread(sar_path, cv2.IMREAD_UNCHANGED)
-        rgb_image = cv2.imread(rgb_path, cv2.IMREAD_UNCHANGED)
+            #read rgb and sar images
+            sar_image = cv2.imread(sar_path, cv2.IMREAD_UNCHANGED)
+            rgb_image = cv2.imread(rgb_path, cv2.IMREAD_UNCHANGED)
 
-        #resize SAR to match RGB dimensions
-        sar_image = cv2.resize(sar_image, (rgb_image.shape[1], rgb_image.shape[0]))
-        h, w = rgb_image.shape[:2]
+            #resize SAR to match RGB dimensions
+            sar_image = cv2.resize(sar_image, (rgb_image.shape[1], rgb_image.shape[0]))
+            h, w = rgb_image.shape[:2]
 
-        #generate full-size Gaussian once, centered
-        gaussian_full = self.generate_gaussian(h, w)
+            #generate full-size Gaussian once, centered
+            gaussian_full = self.generate_gaussian(h, w)
 
-        #choose crop centers
-        if is_similar:
-            cx, cy = self.random_point_near_center(h, w, delta=256)
-            cx1, cy1 = cx, cy
-            cx2, cy2 = cx, cy
+            #choose crop centers
+            if is_similar:
+                cx, cy = self.random_point_near_center(h, w, delta=256)
+                cx1, cy1 = cx, cy
+                cx2, cy2 = cx, cy
+            else:
+                cx1, cy1 = self.random_point_near_center(h, w, delta=256)
+                cx2, cy2 = self.random_point_near_center(h, w, delta=400)
+
+            #crop SAR, RGB, and Gaussian
+            sar_crop = self.safe_crop(sar_image, cx1, cy1, self.image_size)
+            rgb_crop = self.safe_crop(rgb_image, cx2, cy2, self.image_size)
+            
+            #crop Gaussian
+            if is_similar:
+                g_crop = self.safe_crop(gaussian_full, cx1, cy1, self.image_size)
+            else:
+                g_crop = np.zeros((self.image_size, self.image_size), dtype=np.float32)
+
+            #convert to tensors
+            sar_tensor = self.transform(sar_crop)
+            sar_tensor = sar_tensor.repeat(3, 1, 1)  # Repeat the SAR tensor to match RGB channels
+            rgb_tensor = self.transform(rgb_crop)
+            g_tensor = torch.from_numpy(g_crop).unsqueeze(0).float()
+
+            return [rgb_tensor, sar_tensor, g_tensor], torch.tensor(is_similar, dtype=torch.float32)
         else:
-            cx1, cy1 = self.random_point_near_center(h, w, delta=256)
-            cx2, cy2 = self.random_point_near_center(h, w, delta=400)
+            cx1, cy1, cx2, cy2, is_similar = self.valid_pts[idx]
+            pair_idx = idx % len(self.pairs)
+            sar_path, rgb_path = self.pairs[pair_idx]
 
-        #crop SAR, RGB, and Gaussian
-        sar_crop = self.safe_crop(sar_image, cx1, cy1, self.image_size)
-        rgb_crop = self.safe_crop(rgb_image, cx2, cy2, self.image_size)
-        
-        #crop Gaussian
-        if is_similar:
-            g_crop = self.safe_crop(gaussian_full, cx1, cy1, self.image_size)
-        else:
-            g_crop = np.zeros((self.image_size, self.image_size), dtype=np.float32)
+            sar_image = cv2.imread(sar_path, cv2.IMREAD_UNCHANGED)
+            rgb_image = cv2.imread(rgb_path, cv2.IMREAD_UNCHANGED)
 
-        #convert to tensors
-        sar_tensor = self.transform(sar_crop)
-        rgb_tensor = self.transform(rgb_crop)
-        g_tensor = torch.from_numpy(g_crop).unsqueeze(0).float()
+            sar_image = cv2.resize(sar_image, (rgb_image.shape[1], rgb_image.shape[0]))
+            gaussian_full = self.generate_gaussian(*rgb_image.shape[:2])
 
-        return [rgb_tensor, sar_tensor, g_tensor], torch.tensor(is_similar, dtype=torch.float32)
+            sar_crop = self.safe_crop(sar_image, cx1, cy1, self.image_size)
+            rgb_crop = self.safe_crop(rgb_image, cx2, cy2, self.image_size)
+
+            if is_similar:
+                g_crop = self.safe_crop(gaussian_full, cx1, cy1, self.image_size)
+            else:
+                g_crop = np.zeros((self.image_size, self.image_size), dtype=np.float32)
+
+            sar_tensor = self.transform(sar_crop)
+            sar_tensor = sar_tensor.repeat(3, 1, 1)  # Repeat the SAR tensor to match RGB channels
+            rgb_tensor = self.transform(rgb_crop) 
+            g_tensor = torch.from_numpy(g_crop).unsqueeze(0).float()
+            
+            return [rgb_tensor, sar_tensor, g_tensor], torch.tensor(is_similar, dtype=torch.float32)
 
     def random_point_near_center(self, height, width, delta=20):
         center_x = width // 2
@@ -98,7 +147,7 @@ class ContrastiveDatafeeder(Dataset):
             return padded
         return cropped
 
-    def generate_gaussian(self, height, width, sigma_ratio=4):
+    def generate_gaussian(self, height, width, sigma_ratio=2):
         x = np.linspace(-1, 1, width)
         y = np.linspace(-1, 1, height)
         x, y = np.meshgrid(x, y)
@@ -109,7 +158,7 @@ class ContrastiveDatafeeder(Dataset):
 
 
 
-def get_dataloader_v2(config, debug=False):
-    dataset = ContrastiveDatafeeder(config, debug)
+def get_dataloader_v2(config, mode="train", debug=False):
+    dataset = ContrastiveDatafeeder(config, mode, debug)
     dataloader = DataLoader(dataset, batch_size=config.data["batch_size"], shuffle=True, num_workers=config.data["num_workers"])
     return dataloader
