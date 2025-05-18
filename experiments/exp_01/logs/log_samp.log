@@ -21,3 +21,8 @@
 2025-05-18 22:16:13 - INFO - Epoch 2 - Train Loss: 0.2277
 2025-05-18 22:16:47 - INFO - Epoch 2 - Validation Loss: 0.1439
 2025-05-18 22:16:47 - INFO - Epoch 3/100
+2025-05-18 22:19:37 - INFO - Epoch 3 - Train Loss: 0.2238
+2025-05-18 22:20:10 - INFO - Epoch 3 - Validation Loss: 0.1190
+2025-05-18 22:20:13 - INFO - Saved new best model to /home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01/models/best_model.pt
+2025-05-18 22:20:13 - INFO - Epoch 4/100
+2025-05-18 22:23:03 - INFO - Epoch 4 - Train Loss: 0.2110

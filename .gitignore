@@ -5,6 +5,8 @@ data/train/keypoint-crps/02_tiepoints_train_01/crops
 data/train/keypoint-crps/02_tiepoints_train_02/crops
 data/train/keypoint-crps/03_tiepoints_train_01/crops
 data/train/keypoint-crps/train-patch
+experiments/test_01
+data/train/keypoint-crps/train-patch-v2/
 
 #tif files
 **.tif
