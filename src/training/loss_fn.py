@@ -20,9 +20,6 @@ class GaussianModulatedContrastiveLoss(nn.Module):
         rgb_norm = F.normalize(rgb_embed, dim=1)
         sar_norm = F.normalize(sar_embed, dim=1)
 
-        log.info(f"RGB norm: min={rgb_norm.min().item():.4f}, max={rgb_norm.max().item():.4f}, mean={rgb_norm.mean().item():.4f}, std={rgb_norm.std().item():.4f}")
-        log.info(f"SAR norm: min={sar_norm.min().item():.4f}, max={sar_norm.max().item():.4f}, mean={sar_norm.mean().item():.4f}, std={sar_norm.std().item():.4f}")
-
         #cosine similarity
         cos_sim = (rgb_norm * sar_norm).sum(dim=1, keepdim=True)
 
@@ -39,22 +36,42 @@ class GaussianModulatedContrastiveLoss(nn.Module):
         #cosine similarity stats
         sim_mask = label.bool()
         dis_mask = ~sim_mask
-        log.info(f"Cos Sim - Similar: min={cos_sim[sim_mask].min().item():.4f}, max={cos_sim[sim_mask].max().item():.4f}, mean={cos_sim[sim_mask].mean().item():.4f}")
-        log.info(f"Cos Sim - Dissimilar: min={cos_sim[dis_mask].min().item():.4f}, max={cos_sim[dis_mask].max().item():.4f}, mean={cos_sim[dis_mask].mean().item():.4f}")
-
-        #gaussian map, should be 0 for dissimilar pairs
-        log.info(f"Gaussian - Similar: mean={gaussian_mask[sim_mask].mean().item():.4f}, std={gaussian_mask[sim_mask].std().item():.4f}")
-        log.info(f"Gaussian - Dissimilar: mean={gaussian_mask[dis_mask].mean().item():.4f}, std={gaussian_mask[dis_mask].std().item():.4f}")
-
+        
         #possitive and negative losses
         pos_loss = (1 - cos_sim) * (gaussian_mask + 0.1)
-        neg_loss = F.relu(cos_sim - self.margin).pow(2)
+        neg_loss = (F.relu(cos_sim - self.margin).pow(2))#*0.1
 
-        log.info(f"Pos loss: mean={pos_loss[sim_mask].mean().item():.6f}, sum={pos_loss[sim_mask].sum().item():.6f}")
-        log.info(f"Neg loss: mean={neg_loss[dis_mask].mean().item():.6f}, sum={neg_loss[dis_mask].sum().item():.6f}")
+        rgb_magnitude = rgb_norm.norm(dim=1, keepdim=True)  # shape: [B, 1, H, W]
+        sar_magnitude = sar_norm.norm(dim=1, keepdim=True)
 
-        #total loss
+
+        # Log for similar pairs
+        if sim_mask.any():
+            log.info(f"--- Similar Pairs ---")
+            log.info(f"RGB norm (Similar): min={rgb_magnitude[sim_mask].min().item():.4f}, max={rgb_magnitude[sim_mask].max().item():.4f}, mean={rgb_magnitude[sim_mask].mean().item():.4f}, std={rgb_magnitude[sim_mask].std().item():.4f}")
+            log.info(f"SAR norm (Similar): min={sar_magnitude[sim_mask].min().item():.4f}, max={sar_magnitude[sim_mask].max().item():.4f}, mean={sar_magnitude[sim_mask].mean().item():.4f}, std={sar_magnitude[sim_mask].std().item():.4f}")
+            log.info(f"Cos Sim: min={cos_sim[sim_mask].min().item():.4f}, max={cos_sim[sim_mask].max().item():.4f}, mean={cos_sim[sim_mask].mean().item():.4f}")
+            log.info(f"Gaussian: mean={gaussian_mask[sim_mask].mean().item():.4f}, std={gaussian_mask[sim_mask].std().item():.4f}")
+            log.info(f"Pos loss: mean={pos_loss[sim_mask].mean().item():.6f}, sum={pos_loss[sim_mask].sum().item():.6f}")
+        else:
+            log.info("No similar pairs in this batch.")
+
+        # Log for dissimilar pairs
+        if dis_mask.any():
+            log.info(f"--- Dissimilar Pairs ---")
+            log.info(f"RGB norm (Similar): min={rgb_magnitude[dis_mask].min().item():.4f}, max={rgb_magnitude[dis_mask].max().item():.4f}, mean={rgb_magnitude[dis_mask].mean().item():.4f}, std={rgb_magnitude[dis_mask].std().item():.4f}")
+            log.info(f"SAR norm (Similar): min={sar_magnitude[dis_mask].min().item():.4f}, max={sar_magnitude[dis_mask].max().item():.4f}, mean={sar_magnitude[dis_mask].mean().item():.4f}, std={sar_magnitude[dis_mask].std().item():.4f}")
+
+            log.info(f"Cos Sim: min={cos_sim[dis_mask].min().item():.4f}, max={cos_sim[dis_mask].max().item():.4f}, mean={cos_sim[dis_mask].mean().item():.4f}")
+            log.info(f"Gaussian: mean={gaussian_mask[dis_mask].mean().item():.4f}, std={gaussian_mask[dis_mask].std().item():.4f}")
+            log.info(f"Neg loss: mean={neg_loss[dis_mask].mean().item():.6f}, sum={neg_loss[dis_mask].sum().item():.6f}")
+        else:
+            log.info("No dissimilar pairs in this batch.")
+
+
+
         loss = label * pos_loss + (1 - label) * neg_loss
+
         log.info(f"Total loss (before reduction): mean={loss.mean().item():.6f}, sum={loss.sum().item():.6f}")
 
         if self.reduction == 'mean':
@@ -74,9 +91,23 @@ class HeatmapRegressionLoss(nn.Module):
         return self.loss_fn(pred_heatmap, target_heatmap)
 
 
+class TripletLoss(torch.nn.Module):
+    def __init__(self, margin=1.0):
+        super().__init__()
+        self.margin = margin
+
+    def forward(self, anchor, positive, negative):
+        distance_pos = F.pairwise_distance(anchor, positive, p=2) #>> pos distance
+        distance_neg = F.pairwise_distance(anchor, negative, p=2) #>> neg distance
+        # print(f"Distance pos: {distance_pos.mean()}, Distance neg: {distance_neg.mean()}")
+        return F.relu(distance_pos - distance_neg + self.margin).mean() #>> triplet loss
+
+
+
+
 def get_loss(name):
     if name == "contrastive":
-        return GaussianModulatedContrastiveLoss(margin=1.0)
+        return GaussianModulatedContrastiveLoss(init_margin=1.0)
     elif name == "heatmap":
         return HeatmapRegressionLoss()
     else:

@@ -68,3 +68,26 @@ class ResNet50Spatial(nn.Module):
         return x
 
 
+class ResNet50Triplet2D(nn.Module):
+    def __init__(self, pretrained=True, embedding_dim=128):
+        super().__init__()
+        resnet = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
+        self.backbone = nn.Sequential(*list(resnet.children())[:-2])  # keep feature map, [B, 2048, H/32, W/32]
+
+        self.projection = nn.Sequential(
+            nn.Conv2d(2048, embedding_dim, kernel_size=1),
+            nn.BatchNorm2d(embedding_dim),
+            nn.ReLU(inplace=True)
+        )
+
+    def forward(self, x, global_pool=False):
+        feat_map = self.backbone(x)        # [B, 2048, H/32, W/32]
+        emb_map = self.projection(feat_map)  # [B, output_dim, H/32, W/32]
+
+        if global_pool:
+            #for training triplet loss
+            return F.adaptive_avg_pool2d(emb_map, 1).squeeze(-1).squeeze(-1)  # [B, output_dim]
+        else:
+            #for inference (CCM)
+            return emb_map  # [B, C, H, W]
+
