@@ -8,6 +8,7 @@ data/train/keypoint-crps/train-patch
 experiments/test_01
 data/train/keypoint-crps/train-patch-v2/
 experiments/exp_02/*
+experiments/exp_04/*
 
 #tif files
 **.tif
