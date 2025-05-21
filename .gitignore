@@ -28,3 +28,6 @@ src/datafeeder/datafeeder_v0.py
 
 #cache
 **/__pycache__/
+
+#environment variables
+.env

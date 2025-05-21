@@ -1,10 +1,12 @@
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from utils import logger
 
-log = logger(log_dir="/home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_03/logs", 
-             log_filename="loss_verbose.log")
+# Use environment variable for log directory or default to a local path
+log_dir = os.path.join(os.environ.get('SAVE_PATH', os.path.abspath('../../experiments/exp_01')), 'logs')
+log = logger(log_dir=log_dir, log_filename="loss_verbose.log")
 
 class GaussianModulatedContrastiveLoss(nn.Module):
     def __init__(self, init_margin=1.0, reduction='mean', normalize_gaussian='max'):
