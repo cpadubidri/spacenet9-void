@@ -81,9 +81,9 @@ def train_triplet(config_path, model, train_loader, val_loader):
         writer.add_scalar('Distance/Train_Pos', avg_pos_dist, epoch)
         writer.add_scalar('Distance/Train_Neg', avg_neg_dist, epoch)
 
-
         log.info(f"Epoch {epoch + 1} - Train Loss: {avg_train_loss:.8f}, Pos Dist: {avg_pos_dist:.4f}, Neg Dist: {avg_neg_dist:.4f}")
-        #log embeddings to TensorBoard Projector every epoch
+
+        #validation loop: For log embeddings to TensorBoard Projector every epoch
         embedding_list = []
         metadata_list = []
         label_img_list = []
@@ -130,10 +130,10 @@ def train_triplet(config_path, model, train_loader, val_loader):
             label_img=label_imgs,
             global_step=epoch,
             tag="TripletProjection"
-        )
+        ) #this can be visualized in tensorboard projector
 
 
-        #validation
+        #validation loop for calualting loss
         val_loss = 0.0
         total_pos_dist = 0.0
         total_neg_dist = 0.0
