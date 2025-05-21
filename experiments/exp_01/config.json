@@ -2,7 +2,7 @@
 {
     "experiment_name":"samp",
     "experiment_description":"abc 123",
-    "log_path":"experiments/exp_01/logs",
+    "log_path":"${SAVE_PATH}/logs",
     "data": {
         "data_path":"${DATA_PATH}",
         "image_size": 512,
