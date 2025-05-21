@@ -45,6 +45,8 @@ experiments/exp_01/checkpoints/*
 experiments/exp_01/tensorboard/*
 # Handle duplicate log directory structure
 experiments/exp_01/experiments/exp_01/logs/*
+# Specific log files
+experiments/exp_01/logs/log_samp.log
 # All log files anywhere
 **/*.log
 
