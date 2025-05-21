@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  spacenet9:
+    build: .
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    environment:
+      - PROJECT_ROOT=/app
+      - DATA_PATH=/app/data/train/keypoint-crps/train-patch-v2/crops
+      - SAVE_PATH=/app/experiments/exp_01
+    # For GPU support, uncomment the following lines
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: bash -c "cd /app/experiments/exp_01 && python run.py"

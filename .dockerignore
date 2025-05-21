@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Environment variables
+.env
+.env.*
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/env/
+**/venv/
+**/ENV/
+**/env.bak/
+**/venv.bak/
+
+# Data files
+data/train/keypoint-crps/train-patch-v2/crops/*.tif
+
+# Logs and checkpoints
+experiments/exp_01/logs/*
+experiments/exp_01/models/*
+experiments/exp_01/checkpoints/*
+experiments/exp_01/tensorboard/*
+**/*.log

@@ -56,3 +56,47 @@ python run.py
 ## Configuration
 
 The training configuration is defined in `experiments/exp_01/config.json`. You can modify parameters such as batch size, learning rate, and number of epochs there.
+
+## Docker Support
+
+This project includes Docker support for consistent environments across different machines.
+
+### Prerequisites
+
+- Docker and Docker Compose installed on your system
+- For GPU support: NVIDIA Container Toolkit (for GPU acceleration)
+
+### Building and Running with Docker
+
+1. Build the Docker image:
+   ```bash
+   docker-compose build
+   ```
+
+2. Run the project with Docker:
+   ```bash
+   docker-compose up
+   ```
+
+3. For interactive development within the container:
+   ```bash
+   docker-compose run --rm spacenet9 bash
+   ```
+
+### GPU Support
+
+To enable GPU support, uncomment the GPU-related lines in the `docker-compose.yml` file:
+
+```yaml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - driver: nvidia
+          count: 1
+          capabilities: [gpu]
+```
+
+### Environment Variables
+
+Environment variables are defined in the `docker-compose.yml` file, so you don't need to create a separate `.env` file when using Docker.
