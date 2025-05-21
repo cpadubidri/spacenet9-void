@@ -1,28 +1,17 @@
-2025-05-18 22:05:21 - INFO - Experiment Name: samp
-2025-05-18 22:05:21 - INFO - Starting training pipeline...
-2025-05-18 22:05:21 - INFO - Using device: cuda
-2025-05-18 22:05:22 - INFO - Setting Loss_fn: contrastive and Optimizer with Lr: 0.001
-2025-05-18 22:05:22 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01/tensorboard
-2025-05-18 22:05:22 - INFO - Starting training for 100 epochs
-2025-05-18 22:05:22 - INFO - Epoch 1/100
-2025-05-18 22:08:15 - INFO - Epoch 1 - Train Loss: 0.2669
-2025-05-18 22:08:48 - INFO - Epoch 1 - Validation Loss: 0.2604
-2025-05-18 22:10:00 - INFO - Experiment Name: samp
-2025-05-18 22:10:00 - INFO - Starting training pipeline...
-2025-05-18 22:10:00 - INFO - Using device: cuda
-2025-05-18 22:10:00 - INFO - Setting Loss_fn: contrastive and Optimizer with Lr: 0.001
-2025-05-18 22:10:00 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01/tensorboard
-2025-05-18 22:10:00 - INFO - Starting training for 100 epochs
-2025-05-18 22:10:00 - INFO - Epoch 1/100
-2025-05-18 22:12:49 - INFO - Epoch 1 - Train Loss: 0.2542
-2025-05-18 22:13:22 - INFO - Epoch 1 - Validation Loss: 0.1202
-2025-05-18 22:13:22 - INFO - Saved new best model to /home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01/models/best_model.pt
-2025-05-18 22:13:22 - INFO - Epoch 2/100
-2025-05-18 22:16:13 - INFO - Epoch 2 - Train Loss: 0.2277
-2025-05-18 22:16:47 - INFO - Epoch 2 - Validation Loss: 0.1439
-2025-05-18 22:16:47 - INFO - Epoch 3/100
-2025-05-18 22:19:37 - INFO - Epoch 3 - Train Loss: 0.2238
-2025-05-18 22:20:10 - INFO - Epoch 3 - Validation Loss: 0.1190
-2025-05-18 22:20:13 - INFO - Saved new best model to /home/savvas/SUPER-NAS/USERS/Chirag/Others/202501-ey/experiments/exp_01/models/best_model.pt
-2025-05-18 22:20:13 - INFO - Epoch 4/100
-2025-05-18 22:23:03 - INFO - Epoch 4 - Train Loss: 0.2110
+2025-05-19 17:36:57 - INFO - Experiment Name: samp
+2025-05-19 17:36:57 - INFO - Starting training pipeline...
+2025-05-19 17:36:57 - INFO - Using device: cuda
+2025-05-19 17:36:58 - INFO - Setting Loss_fn: contrastive and Optimizer with Lr: 0.001
+2025-05-19 17:36:58 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_01/tensorboard
+2025-05-19 17:36:58 - INFO - Starting training for 100 epochs
+2025-05-19 17:36:58 - INFO - Epoch 1/100
+2025-05-19 17:37:19 - INFO - Experiment Name: samp
+2025-05-19 17:37:19 - INFO - Starting training pipeline...
+2025-05-19 17:37:19 - INFO - Using device: cuda
+2025-05-19 17:37:19 - INFO - Setting Loss_fn: contrastive and Optimizer with Lr: 0.001
+2025-05-19 17:37:19 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_01/tensorboard
+2025-05-19 17:37:19 - INFO - Starting training for 100 epochs
+2025-05-19 17:37:19 - INFO - Epoch 1/100
+2025-05-19 17:39:32 - INFO - Epoch 1 - Train Loss: 0.1591
+2025-05-19 17:39:58 - INFO - Epoch 1 - Valid Loss: 0.3707
+2025-05-19 17:39:59 - INFO - Epoch 2/100

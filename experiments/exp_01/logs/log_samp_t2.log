@@ -1,0 +1,71 @@
+2025-05-19 12:46:43 - INFO - Experiment Name: samp
+2025-05-19 12:46:43 - INFO - Starting training pipeline...
+2025-05-19 12:46:43 - INFO - Using device: cuda
+2025-05-19 12:46:43 - INFO - Setting Loss_fn: contrastive and Optimizer with Lr: 0.001
+2025-05-19 12:46:43 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_01/tensorboard
+2025-05-19 12:46:43 - INFO - Starting training for 100 epochs
+2025-05-19 12:46:43 - INFO - Epoch 1/100
+2025-05-19 12:49:12 - INFO - Epoch 1 - Train Loss: 0.2135
+2025-05-19 12:49:40 - INFO - Epoch 1 - Validation Loss: 0.3619
+2025-05-19 12:49:40 - INFO - Epoch 2/100
+2025-05-19 12:51:47 - INFO - Epoch 2 - Train Loss: 0.1978
+2025-05-19 12:52:17 - INFO - Epoch 2 - Validation Loss: 0.1849
+2025-05-19 12:52:17 - INFO - Epoch 3/100
+2025-05-19 12:54:25 - INFO - Epoch 3 - Train Loss: 0.2169
+2025-05-19 12:54:54 - INFO - Epoch 3 - Validation Loss: 0.2059
+2025-05-19 12:54:54 - INFO - Epoch 4/100
+2025-05-19 12:57:01 - INFO - Epoch 4 - Train Loss: 0.2041
+2025-05-19 12:57:28 - INFO - Epoch 4 - Validation Loss: 0.1499
+2025-05-19 12:57:29 - INFO - Epoch 5/100
+2025-05-19 12:59:31 - INFO - Epoch 5 - Train Loss: 0.1898
+2025-05-19 12:59:57 - INFO - Epoch 5 - Validation Loss: 0.2318
+2025-05-19 12:59:58 - INFO - Epoch 6/100
+2025-05-19 13:02:03 - INFO - Epoch 6 - Train Loss: 0.1881
+2025-05-19 13:02:31 - INFO - Epoch 6 - Validation Loss: 0.1926
+2025-05-19 13:02:31 - INFO - Epoch 7/100
+2025-05-19 13:04:33 - INFO - Epoch 7 - Train Loss: 0.1833
+2025-05-19 13:04:58 - INFO - Epoch 7 - Validation Loss: 0.2042
+2025-05-19 13:04:58 - INFO - Epoch 8/100
+2025-05-19 13:07:00 - INFO - Epoch 8 - Train Loss: 0.1801
+2025-05-19 13:07:28 - INFO - Epoch 8 - Validation Loss: 0.1398
+2025-05-19 13:07:28 - INFO - Epoch 9/100
+2025-05-19 13:09:36 - INFO - Epoch 9 - Train Loss: 0.1820
+2025-05-19 13:10:04 - INFO - Epoch 9 - Validation Loss: 0.2126
+2025-05-19 13:10:04 - INFO - Epoch 10/100
+2025-05-19 13:12:08 - INFO - Epoch 10 - Train Loss: 0.1697
+2025-05-19 13:12:37 - INFO - Epoch 10 - Validation Loss: 0.4485
+2025-05-19 13:12:37 - INFO - Epoch 11/100
+2025-05-19 13:14:42 - INFO - Epoch 11 - Train Loss: 0.1735
+2025-05-19 13:15:11 - INFO - Epoch 11 - Validation Loss: 0.1384
+2025-05-19 13:15:11 - INFO - Epoch 12/100
+2025-05-19 13:17:14 - INFO - Epoch 12 - Train Loss: 0.1728
+2025-05-19 13:17:40 - INFO - Epoch 12 - Validation Loss: 0.1342
+2025-05-19 13:17:40 - INFO - Epoch 13/100
+2025-05-19 13:19:45 - INFO - Epoch 13 - Train Loss: 0.1740
+2025-05-19 13:20:11 - INFO - Epoch 13 - Validation Loss: 0.1115
+2025-05-19 13:20:12 - INFO - Epoch 14/100
+2025-05-19 13:22:19 - INFO - Epoch 14 - Train Loss: 0.1657
+2025-05-19 13:22:45 - INFO - Epoch 14 - Validation Loss: 0.2383
+2025-05-19 13:22:45 - INFO - Epoch 15/100
+2025-05-19 13:24:48 - INFO - Epoch 15 - Train Loss: 0.1736
+2025-05-19 13:25:15 - INFO - Epoch 15 - Validation Loss: 0.2989
+2025-05-19 13:25:16 - INFO - Epoch 16/100
+2025-05-19 13:27:19 - INFO - Epoch 16 - Train Loss: 0.1662
+2025-05-19 13:27:45 - INFO - Epoch 16 - Validation Loss: 0.2136
+2025-05-19 13:27:45 - INFO - Epoch 17/100
+2025-05-19 13:29:48 - INFO - Epoch 17 - Train Loss: 0.1680
+2025-05-19 13:30:15 - INFO - Epoch 17 - Validation Loss: 0.1542
+2025-05-19 13:30:15 - INFO - Epoch 18/100
+2025-05-19 13:32:19 - INFO - Epoch 18 - Train Loss: 0.1679
+2025-05-19 13:32:46 - INFO - Epoch 18 - Validation Loss: 0.4238
+2025-05-19 13:32:46 - INFO - Epoch 19/100
+2025-05-19 13:34:46 - INFO - Epoch 19 - Train Loss: 0.1609
+2025-05-19 13:35:12 - INFO - Epoch 19 - Validation Loss: 0.1751
+2025-05-19 13:35:12 - INFO - Epoch 20/100
+2025-05-19 13:37:13 - INFO - Epoch 20 - Train Loss: 0.1574
+2025-05-19 13:37:40 - INFO - Epoch 20 - Validation Loss: 0.2733
+2025-05-19 13:37:40 - INFO - Epoch 21/100
+2025-05-19 13:39:44 - INFO - Epoch 21 - Train Loss: 0.1565
+2025-05-19 13:40:11 - INFO - Epoch 21 - Validation Loss: 0.3485
+2025-05-19 13:40:11 - INFO - Epoch 22/100
+2025-05-19 13:42:17 - INFO - Epoch 22 - Train Loss: 0.1615

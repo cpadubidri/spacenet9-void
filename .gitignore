@@ -7,6 +7,7 @@ data/train/keypoint-crps/03_tiepoints_train_01/crops
 data/train/keypoint-crps/train-patch
 experiments/test_01
 data/train/keypoint-crps/train-patch-v2/
+experiments/exp_02/*
 
 #tif files
 **.tif
@@ -20,6 +21,8 @@ data/train/data_list.csv
 docs/space9_v2.pptx
 experiments/test.py
 # experiments/test.ipynb
+src/training/train_unet.py
+src/models/unet.py
 
 src/datafeeder/datafeeder_v0.py 
 
