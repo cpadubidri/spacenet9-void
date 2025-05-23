@@ -1,0 +1,335 @@
+2025-05-22 22:21:22 - INFO - Experiment Name: triplet loss
+2025-05-22 22:21:22 - INFO - Starting TripletLoss training pipeline...
+2025-05-22 22:21:22 - INFO - Using device: cuda
+2025-05-22 22:21:22 - INFO - TensorBoard initialized at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/tensorboard
+2025-05-22 22:21:22 - INFO - Training for 100 epochs
+2025-05-22 22:21:22 - INFO - Epoch 1/100
+2025-05-22 22:23:04 - INFO - Epoch 1 - Train Loss: 0.48702952, Pos Dist: 1.0243, Neg Dist: 1.7022
+2025-05-22 22:23:27 - INFO - Epoch 1 - Val Loss: 0.09250732, Pos Dist: 1.0000, Neg Dist: 2.4043
+2025-05-22 22:23:28 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:23:28 - INFO - Epoch 2/100
+2025-05-22 22:25:10 - INFO - Epoch 2 - Train Loss: 0.07447268, Pos Dist: 0.9824, Neg Dist: 2.6232
+2025-05-22 22:25:34 - INFO - Epoch 2 - Val Loss: 0.04658900, Pos Dist: 0.9894, Neg Dist: 2.7980
+2025-05-22 22:25:35 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:25:35 - INFO - Epoch 3/100
+2025-05-22 22:27:19 - INFO - Epoch 3 - Train Loss: 0.02955578, Pos Dist: 0.9585, Neg Dist: 2.8914
+2025-05-22 22:27:42 - INFO - Epoch 3 - Val Loss: 0.02198969, Pos Dist: 0.9857, Neg Dist: 3.0181
+2025-05-22 22:27:43 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:27:43 - INFO - Epoch 4/100
+2025-05-22 22:29:25 - INFO - Epoch 4 - Train Loss: 0.01771376, Pos Dist: 0.9533, Neg Dist: 3.0010
+2025-05-22 22:29:49 - INFO - Epoch 4 - Val Loss: 0.00816603, Pos Dist: 0.9530, Neg Dist: 3.0755
+2025-05-22 22:29:50 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:29:50 - INFO - Epoch 5/100
+2025-05-22 22:31:33 - INFO - Epoch 5 - Train Loss: 0.03096011, Pos Dist: 0.9347, Neg Dist: 3.0615
+2025-05-22 22:31:56 - INFO - Epoch 5 - Val Loss: 0.04149144, Pos Dist: 0.9501, Neg Dist: 3.0590
+2025-05-22 22:31:57 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_5.pt
+2025-05-22 22:31:57 - INFO - Epoch 6/100
+2025-05-22 22:33:39 - INFO - Epoch 6 - Train Loss: 0.02980591, Pos Dist: 0.9486, Neg Dist: 3.1211
+2025-05-22 22:34:02 - INFO - Epoch 6 - Val Loss: 0.03132864, Pos Dist: 0.9435, Neg Dist: 3.1201
+2025-05-22 22:34:02 - INFO - Epoch 7/100
+2025-05-22 22:35:45 - INFO - Epoch 7 - Train Loss: 0.01450944, Pos Dist: 0.9302, Neg Dist: 3.2682
+2025-05-22 22:36:08 - INFO - Epoch 7 - Val Loss: 0.01410724, Pos Dist: 0.9472, Neg Dist: 3.3006
+2025-05-22 22:36:08 - INFO - Epoch 8/100
+2025-05-22 22:37:51 - INFO - Epoch 8 - Train Loss: 0.01858416, Pos Dist: 0.9368, Neg Dist: 3.2785
+2025-05-22 22:38:15 - INFO - Epoch 8 - Val Loss: 0.00168150, Pos Dist: 0.9433, Neg Dist: 3.3304
+2025-05-22 22:38:15 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:38:15 - INFO - Epoch 9/100
+2025-05-22 22:39:57 - INFO - Epoch 9 - Train Loss: 0.01599341, Pos Dist: 0.9189, Neg Dist: 3.3284
+2025-05-22 22:40:21 - INFO - Epoch 9 - Val Loss: 0.00030999, Pos Dist: 0.9141, Neg Dist: 3.3793
+2025-05-22 22:40:22 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:40:22 - INFO - Epoch 10/100
+2025-05-22 22:42:03 - INFO - Epoch 10 - Train Loss: 0.01727516, Pos Dist: 0.9073, Neg Dist: 3.4118
+2025-05-22 22:42:27 - INFO - Epoch 10 - Val Loss: 0.02025089, Pos Dist: 0.9333, Neg Dist: 3.5195
+2025-05-22 22:42:28 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_10.pt
+2025-05-22 22:42:28 - INFO - Epoch 11/100
+2025-05-22 22:44:13 - INFO - Epoch 11 - Train Loss: 0.01516081, Pos Dist: 0.9170, Neg Dist: 3.4407
+2025-05-22 22:44:36 - INFO - Epoch 11 - Val Loss: 0.00094563, Pos Dist: 0.9186, Neg Dist: 3.4723
+2025-05-22 22:44:36 - INFO - Epoch 12/100
+2025-05-22 22:46:20 - INFO - Epoch 12 - Train Loss: 0.01015568, Pos Dist: 0.9076, Neg Dist: 3.4464
+2025-05-22 22:46:43 - INFO - Epoch 12 - Val Loss: 0.00076107, Pos Dist: 0.9179, Neg Dist: 3.5617
+2025-05-22 22:46:43 - INFO - Epoch 13/100
+2025-05-22 22:48:25 - INFO - Epoch 13 - Train Loss: 0.01990947, Pos Dist: 0.9107, Neg Dist: 3.4896
+2025-05-22 22:48:48 - INFO - Epoch 13 - Val Loss: 0.00051800, Pos Dist: 0.9180, Neg Dist: 3.5579
+2025-05-22 22:48:48 - INFO - Epoch 14/100
+2025-05-22 22:50:30 - INFO - Epoch 14 - Train Loss: 0.01589926, Pos Dist: 0.9461, Neg Dist: 3.5728
+2025-05-22 22:50:53 - INFO - Epoch 14 - Val Loss: 0.01341449, Pos Dist: 0.9039, Neg Dist: 3.5048
+2025-05-22 22:50:53 - INFO - Epoch 15/100
+2025-05-22 22:52:36 - INFO - Epoch 15 - Train Loss: 0.01177947, Pos Dist: 0.9225, Neg Dist: 3.4977
+2025-05-22 22:52:59 - INFO - Epoch 15 - Val Loss: 0.00024864, Pos Dist: 0.9431, Neg Dist: 3.5167
+2025-05-22 22:53:05 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 22:53:06 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_15.pt
+2025-05-22 22:53:06 - INFO - Epoch 16/100
+2025-05-22 22:54:49 - INFO - Epoch 16 - Train Loss: 0.00272569, Pos Dist: 0.9455, Neg Dist: 3.5843
+2025-05-22 22:55:12 - INFO - Epoch 16 - Val Loss: 0.02013882, Pos Dist: 0.9257, Neg Dist: 3.4225
+2025-05-22 22:55:12 - INFO - Epoch 17/100
+2025-05-22 22:56:55 - INFO - Epoch 17 - Train Loss: 0.01646545, Pos Dist: 0.9655, Neg Dist: 3.5081
+2025-05-22 22:57:18 - INFO - Epoch 17 - Val Loss: 0.01925158, Pos Dist: 0.9536, Neg Dist: 3.4373
+2025-05-22 22:57:18 - INFO - Epoch 18/100
+2025-05-22 22:58:59 - INFO - Epoch 18 - Train Loss: 0.01221513, Pos Dist: 0.9185, Neg Dist: 3.5015
+2025-05-22 22:59:23 - INFO - Epoch 18 - Val Loss: 0.03510662, Pos Dist: 0.9029, Neg Dist: 3.4502
+2025-05-22 22:59:23 - INFO - Epoch 19/100
+2025-05-22 23:01:06 - INFO - Epoch 19 - Train Loss: 0.00970804, Pos Dist: 0.9127, Neg Dist: 3.5086
+2025-05-22 23:01:30 - INFO - Epoch 19 - Val Loss: 0.00048507, Pos Dist: 0.9132, Neg Dist: 3.3446
+2025-05-22 23:01:30 - INFO - Epoch 20/100
+2025-05-22 23:03:13 - INFO - Epoch 20 - Train Loss: 0.00802868, Pos Dist: 0.9038, Neg Dist: 3.4413
+2025-05-22 23:03:36 - INFO - Epoch 20 - Val Loss: 0.01833383, Pos Dist: 0.9163, Neg Dist: 3.3438
+2025-05-22 23:03:36 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_20.pt
+2025-05-22 23:03:36 - INFO - Epoch 21/100
+2025-05-22 23:05:21 - INFO - Epoch 21 - Train Loss: 0.00490462, Pos Dist: 0.9049, Neg Dist: 3.3883
+2025-05-22 23:05:44 - INFO - Epoch 21 - Val Loss: 0.02199097, Pos Dist: 0.9006, Neg Dist: 3.2729
+2025-05-22 23:05:44 - INFO - Epoch 22/100
+2025-05-22 23:07:26 - INFO - Epoch 22 - Train Loss: 0.00703121, Pos Dist: 0.9002, Neg Dist: 3.4876
+2025-05-22 23:07:49 - INFO - Epoch 22 - Val Loss: 0.00005793, Pos Dist: 0.8920, Neg Dist: 3.5144
+2025-05-22 23:07:56 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 23:07:56 - INFO - Epoch 23/100
+2025-05-22 23:09:38 - INFO - Epoch 23 - Train Loss: 0.00679675, Pos Dist: 0.8953, Neg Dist: 3.5627
+2025-05-22 23:10:01 - INFO - Epoch 23 - Val Loss: 0.01900199, Pos Dist: 0.9345, Neg Dist: 3.5341
+2025-05-22 23:10:01 - INFO - Epoch 24/100
+2025-05-22 23:11:43 - INFO - Epoch 24 - Train Loss: 0.00896810, Pos Dist: 0.9266, Neg Dist: 3.6544
+2025-05-22 23:12:06 - INFO - Epoch 24 - Val Loss: 0.01411135, Pos Dist: 0.9020, Neg Dist: 3.6967
+2025-05-22 23:12:06 - INFO - Epoch 25/100
+2025-05-22 23:13:48 - INFO - Epoch 25 - Train Loss: 0.01138443, Pos Dist: 0.9320, Neg Dist: 3.7365
+2025-05-22 23:14:11 - INFO - Epoch 25 - Val Loss: 0.00023967, Pos Dist: 0.9183, Neg Dist: 3.6695
+2025-05-22 23:14:12 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_25.pt
+2025-05-22 23:14:12 - INFO - Epoch 26/100
+2025-05-22 23:15:55 - INFO - Epoch 26 - Train Loss: 0.00788251, Pos Dist: 0.9353, Neg Dist: 3.7246
+2025-05-22 23:16:18 - INFO - Epoch 26 - Val Loss: 0.00000000, Pos Dist: 0.9353, Neg Dist: 3.7725
+2025-05-22 23:16:24 - INFO - Saved best model to /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/models/best_model.pt
+2025-05-22 23:16:24 - INFO - Epoch 27/100
+2025-05-22 23:18:06 - INFO - Epoch 27 - Train Loss: 0.01046551, Pos Dist: 0.9165, Neg Dist: 3.6769
+2025-05-22 23:18:30 - INFO - Epoch 27 - Val Loss: 0.01788302, Pos Dist: 0.8984, Neg Dist: 3.7063
+2025-05-22 23:18:30 - INFO - Epoch 28/100
+2025-05-22 23:20:13 - INFO - Epoch 28 - Train Loss: 0.00402897, Pos Dist: 0.9154, Neg Dist: 3.7487
+2025-05-22 23:20:36 - INFO - Epoch 28 - Val Loss: 0.01713771, Pos Dist: 0.8908, Neg Dist: 3.6581
+2025-05-22 23:20:36 - INFO - Epoch 29/100
+2025-05-22 23:22:19 - INFO - Epoch 29 - Train Loss: 0.01370503, Pos Dist: 0.9620, Neg Dist: 3.7353
+2025-05-22 23:22:42 - INFO - Epoch 29 - Val Loss: 0.00523180, Pos Dist: 0.9696, Neg Dist: 3.7042
+2025-05-22 23:22:42 - INFO - Epoch 30/100
+2025-05-22 23:24:24 - INFO - Epoch 30 - Train Loss: 0.01300912, Pos Dist: 0.9756, Neg Dist: 3.7682
+2025-05-22 23:24:46 - INFO - Epoch 30 - Val Loss: 0.00026344, Pos Dist: 0.9409, Neg Dist: 3.8999
+2025-05-22 23:24:47 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_30.pt
+2025-05-22 23:24:47 - INFO - Epoch 31/100
+2025-05-22 23:26:35 - INFO - Epoch 31 - Train Loss: 0.00081188, Pos Dist: 0.9314, Neg Dist: 3.8700
+2025-05-22 23:26:58 - INFO - Epoch 31 - Val Loss: 0.00000000, Pos Dist: 0.9431, Neg Dist: 3.8061
+2025-05-22 23:26:58 - INFO - Epoch 32/100
+2025-05-22 23:28:41 - INFO - Epoch 32 - Train Loss: 0.00010038, Pos Dist: 0.9348, Neg Dist: 3.8919
+2025-05-22 23:29:04 - INFO - Epoch 32 - Val Loss: 0.00000000, Pos Dist: 0.9398, Neg Dist: 3.8652
+2025-05-22 23:29:04 - INFO - Epoch 33/100
+2025-05-22 23:30:47 - INFO - Epoch 33 - Train Loss: 0.00879992, Pos Dist: 0.9293, Neg Dist: 3.9123
+2025-05-22 23:31:11 - INFO - Epoch 33 - Val Loss: 0.00033344, Pos Dist: 1.0010, Neg Dist: 3.9300
+2025-05-22 23:31:11 - INFO - Epoch 34/100
+2025-05-22 23:32:53 - INFO - Epoch 34 - Train Loss: 0.00392857, Pos Dist: 0.9385, Neg Dist: 3.8855
+2025-05-22 23:33:16 - INFO - Epoch 34 - Val Loss: 0.00000000, Pos Dist: 0.9332, Neg Dist: 3.8706
+2025-05-22 23:33:16 - INFO - Epoch 35/100
+2025-05-22 23:34:58 - INFO - Epoch 35 - Train Loss: 0.01237970, Pos Dist: 0.9627, Neg Dist: 3.8637
+2025-05-22 23:35:21 - INFO - Epoch 35 - Val Loss: 0.00000000, Pos Dist: 0.9289, Neg Dist: 3.7869
+2025-05-22 23:35:22 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_35.pt
+2025-05-22 23:35:22 - INFO - Epoch 36/100
+2025-05-22 23:37:06 - INFO - Epoch 36 - Train Loss: 0.01036486, Pos Dist: 0.9649, Neg Dist: 3.8459
+2025-05-22 23:37:28 - INFO - Epoch 36 - Val Loss: 0.01215622, Pos Dist: 0.9684, Neg Dist: 3.8133
+2025-05-22 23:37:28 - INFO - Epoch 37/100
+2025-05-22 23:39:12 - INFO - Epoch 37 - Train Loss: 0.00055125, Pos Dist: 0.9796, Neg Dist: 3.8943
+2025-05-22 23:39:34 - INFO - Epoch 37 - Val Loss: 0.03670398, Pos Dist: 0.9674, Neg Dist: 3.8056
+2025-05-22 23:39:34 - INFO - Epoch 38/100
+2025-05-22 23:41:18 - INFO - Epoch 38 - Train Loss: 0.00872778, Pos Dist: 0.9498, Neg Dist: 3.8914
+2025-05-22 23:41:40 - INFO - Epoch 38 - Val Loss: 0.00000000, Pos Dist: 0.9429, Neg Dist: 3.9833
+2025-05-22 23:41:40 - INFO - Epoch 39/100
+2025-05-22 23:43:23 - INFO - Epoch 39 - Train Loss: 0.00830963, Pos Dist: 0.9640, Neg Dist: 3.9386
+2025-05-22 23:43:47 - INFO - Epoch 39 - Val Loss: 0.00108012, Pos Dist: 0.9692, Neg Dist: 3.9415
+2025-05-22 23:43:47 - INFO - Epoch 40/100
+2025-05-22 23:45:29 - INFO - Epoch 40 - Train Loss: 0.01110782, Pos Dist: 0.9895, Neg Dist: 3.9410
+2025-05-22 23:45:52 - INFO - Epoch 40 - Val Loss: 0.00068445, Pos Dist: 0.9586, Neg Dist: 3.9309
+2025-05-22 23:45:53 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_40.pt
+2025-05-22 23:45:53 - INFO - Epoch 41/100
+2025-05-22 23:47:36 - INFO - Epoch 41 - Train Loss: 0.01000928, Pos Dist: 0.9511, Neg Dist: 3.9909
+2025-05-22 23:47:58 - INFO - Epoch 41 - Val Loss: 0.00000000, Pos Dist: 0.9604, Neg Dist: 3.9711
+2025-05-22 23:47:58 - INFO - Epoch 42/100
+2025-05-22 23:49:41 - INFO - Epoch 42 - Train Loss: 0.00352532, Pos Dist: 0.9562, Neg Dist: 4.0196
+2025-05-22 23:50:04 - INFO - Epoch 42 - Val Loss: 0.00911895, Pos Dist: 0.9781, Neg Dist: 4.0302
+2025-05-22 23:50:04 - INFO - Epoch 43/100
+2025-05-22 23:51:47 - INFO - Epoch 43 - Train Loss: 0.00299705, Pos Dist: 0.9488, Neg Dist: 4.0815
+2025-05-22 23:52:09 - INFO - Epoch 43 - Val Loss: 0.00000000, Pos Dist: 0.9509, Neg Dist: 4.0510
+2025-05-22 23:52:09 - INFO - Epoch 44/100
+2025-05-22 23:53:51 - INFO - Epoch 44 - Train Loss: 0.01490568, Pos Dist: 0.9667, Neg Dist: 4.0520
+2025-05-22 23:54:14 - INFO - Epoch 44 - Val Loss: 0.00000000, Pos Dist: 0.9524, Neg Dist: 4.1058
+2025-05-22 23:54:14 - INFO - Epoch 45/100
+2025-05-22 23:55:57 - INFO - Epoch 45 - Train Loss: 0.00616817, Pos Dist: 0.9732, Neg Dist: 4.0166
+2025-05-22 23:56:20 - INFO - Epoch 45 - Val Loss: 0.01286285, Pos Dist: 0.9577, Neg Dist: 3.8655
+2025-05-22 23:56:21 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_45.pt
+2025-05-22 23:56:21 - INFO - Epoch 46/100
+2025-05-22 23:58:04 - INFO - Epoch 46 - Train Loss: 0.00275594, Pos Dist: 0.9463, Neg Dist: 3.9636
+2025-05-22 23:58:27 - INFO - Epoch 46 - Val Loss: 0.01314707, Pos Dist: 0.9369, Neg Dist: 3.9571
+2025-05-22 23:58:27 - INFO - Epoch 47/100
+2025-05-23 00:00:10 - INFO - Epoch 47 - Train Loss: 0.00888770, Pos Dist: 0.9703, Neg Dist: 4.0515
+2025-05-23 00:00:33 - INFO - Epoch 47 - Val Loss: 0.00000000, Pos Dist: 0.9906, Neg Dist: 4.1495
+2025-05-23 00:00:33 - INFO - Epoch 48/100
+2025-05-23 00:02:16 - INFO - Epoch 48 - Train Loss: 0.00500747, Pos Dist: 0.9851, Neg Dist: 4.1748
+2025-05-23 00:02:39 - INFO - Epoch 48 - Val Loss: 0.00000000, Pos Dist: 0.9849, Neg Dist: 4.2218
+2025-05-23 00:02:39 - INFO - Epoch 49/100
+2025-05-23 00:04:21 - INFO - Epoch 49 - Train Loss: 0.00702617, Pos Dist: 1.0041, Neg Dist: 4.1599
+2025-05-23 00:04:44 - INFO - Epoch 49 - Val Loss: 0.00000000, Pos Dist: 0.9762, Neg Dist: 4.1658
+2025-05-23 00:04:44 - INFO - Epoch 50/100
+2025-05-23 00:06:27 - INFO - Epoch 50 - Train Loss: 0.00200322, Pos Dist: 0.9816, Neg Dist: 4.1231
+2025-05-23 00:06:49 - INFO - Epoch 50 - Val Loss: 0.00000000, Pos Dist: 0.9804, Neg Dist: 4.1412
+2025-05-23 00:06:50 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_50.pt
+2025-05-23 00:06:50 - INFO - Epoch 51/100
+2025-05-23 00:08:32 - INFO - Epoch 51 - Train Loss: 0.00631299, Pos Dist: 0.9687, Neg Dist: 4.0973
+2025-05-23 00:08:56 - INFO - Epoch 51 - Val Loss: 0.00019282, Pos Dist: 1.0218, Neg Dist: 4.0618
+2025-05-23 00:08:56 - INFO - Epoch 52/100
+2025-05-23 00:10:39 - INFO - Epoch 52 - Train Loss: 0.01062840, Pos Dist: 1.0221, Neg Dist: 4.0731
+2025-05-23 00:11:02 - INFO - Epoch 52 - Val Loss: 0.00000398, Pos Dist: 1.0065, Neg Dist: 4.1864
+2025-05-23 00:11:02 - INFO - Epoch 53/100
+2025-05-23 00:12:45 - INFO - Epoch 53 - Train Loss: 0.00803093, Pos Dist: 0.9866, Neg Dist: 4.2368
+2025-05-23 00:13:08 - INFO - Epoch 53 - Val Loss: 0.01988057, Pos Dist: 1.0082, Neg Dist: 4.0917
+2025-05-23 00:13:08 - INFO - Epoch 54/100
+2025-05-23 00:14:50 - INFO - Epoch 54 - Train Loss: 0.01242165, Pos Dist: 1.0143, Neg Dist: 4.0915
+2025-05-23 00:15:13 - INFO - Epoch 54 - Val Loss: 0.02435884, Pos Dist: 1.0368, Neg Dist: 3.9656
+2025-05-23 00:15:13 - INFO - Epoch 55/100
+2025-05-23 00:16:55 - INFO - Epoch 55 - Train Loss: 0.01573184, Pos Dist: 0.9899, Neg Dist: 3.9609
+2025-05-23 00:17:19 - INFO - Epoch 55 - Val Loss: 0.00407867, Pos Dist: 1.0073, Neg Dist: 3.9679
+2025-05-23 00:17:20 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_55.pt
+2025-05-23 00:17:20 - INFO - Epoch 56/100
+2025-05-23 00:19:03 - INFO - Epoch 56 - Train Loss: 0.00549539, Pos Dist: 0.9799, Neg Dist: 3.9844
+2025-05-23 00:19:27 - INFO - Epoch 56 - Val Loss: 0.04003874, Pos Dist: 0.9962, Neg Dist: 3.8794
+2025-05-23 00:19:27 - INFO - Epoch 57/100
+2025-05-23 00:21:09 - INFO - Epoch 57 - Train Loss: 0.00425681, Pos Dist: 0.9898, Neg Dist: 4.0911
+2025-05-23 00:21:32 - INFO - Epoch 57 - Val Loss: 0.00000000, Pos Dist: 0.9942, Neg Dist: 4.1312
+2025-05-23 00:21:32 - INFO - Epoch 58/100
+2025-05-23 00:23:14 - INFO - Epoch 58 - Train Loss: 0.00040276, Pos Dist: 0.9638, Neg Dist: 4.1413
+2025-05-23 00:23:37 - INFO - Epoch 58 - Val Loss: 0.01006971, Pos Dist: 0.9882, Neg Dist: 4.1087
+2025-05-23 00:23:37 - INFO - Epoch 59/100
+2025-05-23 00:25:21 - INFO - Epoch 59 - Train Loss: 0.00595116, Pos Dist: 0.9575, Neg Dist: 4.1637
+2025-05-23 00:25:43 - INFO - Epoch 59 - Val Loss: 0.01704681, Pos Dist: 1.0215, Neg Dist: 4.1321
+2025-05-23 00:25:43 - INFO - Epoch 60/100
+2025-05-23 00:27:24 - INFO - Epoch 60 - Train Loss: 0.01161223, Pos Dist: 0.9948, Neg Dist: 4.2149
+2025-05-23 00:27:47 - INFO - Epoch 60 - Val Loss: 0.01653320, Pos Dist: 1.0269, Neg Dist: 4.1847
+2025-05-23 00:27:48 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_60.pt
+2025-05-23 00:27:48 - INFO - Epoch 61/100
+2025-05-23 00:29:34 - INFO - Epoch 61 - Train Loss: 0.00161456, Pos Dist: 1.0107, Neg Dist: 4.2875
+2025-05-23 00:29:57 - INFO - Epoch 61 - Val Loss: 0.01594512, Pos Dist: 1.0476, Neg Dist: 4.2080
+2025-05-23 00:29:57 - INFO - Epoch 62/100
+2025-05-23 00:31:40 - INFO - Epoch 62 - Train Loss: 0.00177611, Pos Dist: 1.0045, Neg Dist: 4.3127
+2025-05-23 00:32:03 - INFO - Epoch 62 - Val Loss: 0.01408121, Pos Dist: 1.0600, Neg Dist: 4.2211
+2025-05-23 00:32:03 - INFO - Epoch 63/100
+2025-05-23 00:33:46 - INFO - Epoch 63 - Train Loss: 0.00348708, Pos Dist: 0.9911, Neg Dist: 4.2905
+2025-05-23 00:34:09 - INFO - Epoch 63 - Val Loss: 0.00000000, Pos Dist: 1.0052, Neg Dist: 4.2687
+2025-05-23 00:34:09 - INFO - Epoch 64/100
+2025-05-23 00:35:52 - INFO - Epoch 64 - Train Loss: 0.00342042, Pos Dist: 0.9511, Neg Dist: 4.1821
+2025-05-23 00:36:15 - INFO - Epoch 64 - Val Loss: 0.00000000, Pos Dist: 1.0005, Neg Dist: 4.1797
+2025-05-23 00:36:15 - INFO - Epoch 65/100
+2025-05-23 00:37:57 - INFO - Epoch 65 - Train Loss: 0.01057045, Pos Dist: 0.9948, Neg Dist: 4.2523
+2025-05-23 00:38:20 - INFO - Epoch 65 - Val Loss: 0.02628695, Pos Dist: 1.0520, Neg Dist: 4.2395
+2025-05-23 00:38:21 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_65.pt
+2025-05-23 00:38:21 - INFO - Epoch 66/100
+2025-05-23 00:40:05 - INFO - Epoch 66 - Train Loss: 0.00000000, Pos Dist: 1.0081, Neg Dist: 4.3256
+2025-05-23 00:40:28 - INFO - Epoch 66 - Val Loss: 0.00799711, Pos Dist: 1.0739, Neg Dist: 4.2383
+2025-05-23 00:40:28 - INFO - Epoch 67/100
+2025-05-23 00:42:11 - INFO - Epoch 67 - Train Loss: 0.00529798, Pos Dist: 0.9965, Neg Dist: 4.2867
+2025-05-23 00:42:33 - INFO - Epoch 67 - Val Loss: 0.00891619, Pos Dist: 1.0068, Neg Dist: 4.3075
+2025-05-23 00:42:33 - INFO - Epoch 68/100
+2025-05-23 00:44:16 - INFO - Epoch 68 - Train Loss: 0.00795997, Pos Dist: 1.0114, Neg Dist: 4.3643
+2025-05-23 00:44:39 - INFO - Epoch 68 - Val Loss: 0.00021063, Pos Dist: 1.0692, Neg Dist: 4.3659
+2025-05-23 00:44:39 - INFO - Epoch 69/100
+2025-05-23 00:46:23 - INFO - Epoch 69 - Train Loss: 0.00400525, Pos Dist: 1.0220, Neg Dist: 4.3482
+2025-05-23 00:46:46 - INFO - Epoch 69 - Val Loss: 0.00000000, Pos Dist: 1.0458, Neg Dist: 4.3189
+2025-05-23 00:46:46 - INFO - Epoch 70/100
+2025-05-23 00:48:29 - INFO - Epoch 70 - Train Loss: 0.00438842, Pos Dist: 1.0076, Neg Dist: 4.3215
+2025-05-23 00:48:51 - INFO - Epoch 70 - Val Loss: 0.01991542, Pos Dist: 1.0192, Neg Dist: 4.2174
+2025-05-23 00:48:52 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_70.pt
+2025-05-23 00:48:52 - INFO - Epoch 71/100
+2025-05-23 00:50:37 - INFO - Epoch 71 - Train Loss: 0.00164340, Pos Dist: 1.0101, Neg Dist: 4.4611
+2025-05-23 00:51:00 - INFO - Epoch 71 - Val Loss: 0.00139513, Pos Dist: 1.0322, Neg Dist: 4.4047
+2025-05-23 00:51:00 - INFO - Epoch 72/100
+2025-05-23 00:52:41 - INFO - Epoch 72 - Train Loss: 0.00436120, Pos Dist: 0.9926, Neg Dist: 4.4907
+2025-05-23 00:53:04 - INFO - Epoch 72 - Val Loss: 0.00017903, Pos Dist: 1.0550, Neg Dist: 4.5264
+2025-05-23 00:53:04 - INFO - Epoch 73/100
+2025-05-23 00:54:46 - INFO - Epoch 73 - Train Loss: 0.00330566, Pos Dist: 1.0027, Neg Dist: 4.3647
+2025-05-23 00:55:09 - INFO - Epoch 73 - Val Loss: 0.00919485, Pos Dist: 1.0109, Neg Dist: 4.2995
+2025-05-23 00:55:09 - INFO - Epoch 74/100
+2025-05-23 00:56:51 - INFO - Epoch 74 - Train Loss: 0.00464422, Pos Dist: 0.9595, Neg Dist: 4.4925
+2025-05-23 00:57:14 - INFO - Epoch 74 - Val Loss: 0.01510698, Pos Dist: 1.0327, Neg Dist: 4.4409
+2025-05-23 00:57:14 - INFO - Epoch 75/100
+2025-05-23 00:58:57 - INFO - Epoch 75 - Train Loss: 0.00549080, Pos Dist: 1.0111, Neg Dist: 4.5374
+2025-05-23 00:59:20 - INFO - Epoch 75 - Val Loss: 0.00000000, Pos Dist: 1.0057, Neg Dist: 4.4919
+2025-05-23 00:59:20 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_75.pt
+2025-05-23 00:59:20 - INFO - Epoch 76/100
+2025-05-23 01:01:03 - INFO - Epoch 76 - Train Loss: 0.01464952, Pos Dist: 0.9985, Neg Dist: 4.4489
+2025-05-23 01:01:26 - INFO - Epoch 76 - Val Loss: 0.02215325, Pos Dist: 1.0355, Neg Dist: 4.3208
+2025-05-23 01:01:26 - INFO - Epoch 77/100
+2025-05-23 01:03:08 - INFO - Epoch 77 - Train Loss: 0.00727949, Pos Dist: 0.9867, Neg Dist: 4.4559
+2025-05-23 01:03:32 - INFO - Epoch 77 - Val Loss: 0.00497103, Pos Dist: 1.0080, Neg Dist: 4.4631
+2025-05-23 01:03:32 - INFO - Epoch 78/100
+2025-05-23 01:05:15 - INFO - Epoch 78 - Train Loss: 0.00138065, Pos Dist: 0.9980, Neg Dist: 4.5463
+2025-05-23 01:05:39 - INFO - Epoch 78 - Val Loss: 0.00000000, Pos Dist: 1.0037, Neg Dist: 4.5336
+2025-05-23 01:05:39 - INFO - Epoch 79/100
+2025-05-23 01:07:22 - INFO - Epoch 79 - Train Loss: 0.01174581, Pos Dist: 0.9816, Neg Dist: 4.4577
+2025-05-23 01:07:45 - INFO - Epoch 79 - Val Loss: 0.00043073, Pos Dist: 0.9909, Neg Dist: 4.4262
+2025-05-23 01:07:45 - INFO - Epoch 80/100
+2025-05-23 01:09:26 - INFO - Epoch 80 - Train Loss: 0.00000000, Pos Dist: 0.9815, Neg Dist: 4.4711
+2025-05-23 01:09:49 - INFO - Epoch 80 - Val Loss: 0.01731669, Pos Dist: 1.0082, Neg Dist: 4.4501
+2025-05-23 01:09:50 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_80.pt
+2025-05-23 01:09:50 - INFO - Epoch 81/100
+2025-05-23 01:11:34 - INFO - Epoch 81 - Train Loss: 0.01139691, Pos Dist: 0.9601, Neg Dist: 4.4830
+2025-05-23 01:11:58 - INFO - Epoch 81 - Val Loss: 0.00000000, Pos Dist: 0.9797, Neg Dist: 4.3364
+2025-05-23 01:11:58 - INFO - Epoch 82/100
+2025-05-23 01:13:40 - INFO - Epoch 82 - Train Loss: 0.00327020, Pos Dist: 0.9738, Neg Dist: 4.4000
+2025-05-23 01:14:02 - INFO - Epoch 82 - Val Loss: 0.00000000, Pos Dist: 1.0136, Neg Dist: 4.5284
+2025-05-23 01:14:02 - INFO - Epoch 83/100
+2025-05-23 01:15:45 - INFO - Epoch 83 - Train Loss: 0.00358686, Pos Dist: 1.0246, Neg Dist: 4.5095
+2025-05-23 01:16:08 - INFO - Epoch 83 - Val Loss: 0.00780110, Pos Dist: 1.0531, Neg Dist: 4.5564
+2025-05-23 01:16:08 - INFO - Epoch 84/100
+2025-05-23 01:17:52 - INFO - Epoch 84 - Train Loss: 0.00590511, Pos Dist: 1.0432, Neg Dist: 4.5696
+2025-05-23 01:18:16 - INFO - Epoch 84 - Val Loss: 0.01325819, Pos Dist: 1.1244, Neg Dist: 4.5324
+2025-05-23 01:18:16 - INFO - Epoch 85/100
+2025-05-23 01:19:59 - INFO - Epoch 85 - Train Loss: 0.00498593, Pos Dist: 1.0106, Neg Dist: 4.5169
+2025-05-23 01:20:22 - INFO - Epoch 85 - Val Loss: 0.01150360, Pos Dist: 1.0490, Neg Dist: 4.5613
+2025-05-23 01:20:23 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_85.pt
+2025-05-23 01:20:23 - INFO - Epoch 86/100
+2025-05-23 01:22:05 - INFO - Epoch 86 - Train Loss: 0.00236213, Pos Dist: 1.0137, Neg Dist: 4.6459
+2025-05-23 01:22:29 - INFO - Epoch 86 - Val Loss: 0.01120916, Pos Dist: 1.0753, Neg Dist: 4.5552
+2025-05-23 01:22:29 - INFO - Epoch 87/100
+2025-05-23 01:24:11 - INFO - Epoch 87 - Train Loss: 0.00764623, Pos Dist: 1.0574, Neg Dist: 4.5578
+2025-05-23 01:24:35 - INFO - Epoch 87 - Val Loss: 0.00748306, Pos Dist: 1.2445, Neg Dist: 4.4326
+2025-05-23 01:24:35 - INFO - Epoch 88/100
+2025-05-23 01:26:15 - INFO - Epoch 88 - Train Loss: 0.00902862, Pos Dist: 1.1708, Neg Dist: 4.5503
+2025-05-23 01:26:39 - INFO - Epoch 88 - Val Loss: 0.00021213, Pos Dist: 1.0452, Neg Dist: 4.3408
+2025-05-23 01:26:39 - INFO - Epoch 89/100
+2025-05-23 01:28:22 - INFO - Epoch 89 - Train Loss: 0.00846760, Pos Dist: 0.9975, Neg Dist: 4.3980
+2025-05-23 01:28:45 - INFO - Epoch 89 - Val Loss: 0.00027031, Pos Dist: 1.0226, Neg Dist: 4.4388
+2025-05-23 01:28:45 - INFO - Epoch 90/100
+2025-05-23 01:30:28 - INFO - Epoch 90 - Train Loss: 0.00232750, Pos Dist: 1.0181, Neg Dist: 4.4923
+2025-05-23 01:30:52 - INFO - Epoch 90 - Val Loss: 0.02242323, Pos Dist: 1.0556, Neg Dist: 4.4676
+2025-05-23 01:30:52 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_90.pt
+2025-05-23 01:30:52 - INFO - Epoch 91/100
+2025-05-23 01:32:37 - INFO - Epoch 91 - Train Loss: 0.00461829, Pos Dist: 1.0083, Neg Dist: 4.6159
+2025-05-23 01:33:01 - INFO - Epoch 91 - Val Loss: 0.02044077, Pos Dist: 1.1019, Neg Dist: 4.4760
+2025-05-23 01:33:01 - INFO - Epoch 92/100
+2025-05-23 01:34:44 - INFO - Epoch 92 - Train Loss: 0.00882529, Pos Dist: 1.0743, Neg Dist: 4.6490
+2025-05-23 01:35:06 - INFO - Epoch 92 - Val Loss: 0.02714744, Pos Dist: 1.0664, Neg Dist: 4.5879
+2025-05-23 01:35:06 - INFO - Epoch 93/100
+2025-05-23 01:36:50 - INFO - Epoch 93 - Train Loss: 0.00283431, Pos Dist: 1.0417, Neg Dist: 4.7700
+2025-05-23 01:37:13 - INFO - Epoch 93 - Val Loss: 0.00586758, Pos Dist: 1.0415, Neg Dist: 4.7295
+2025-05-23 01:37:13 - INFO - Epoch 94/100
+2025-05-23 01:38:56 - INFO - Epoch 94 - Train Loss: 0.00683950, Pos Dist: 1.0420, Neg Dist: 4.6947
+2025-05-23 01:39:19 - INFO - Epoch 94 - Val Loss: 0.01197404, Pos Dist: 1.0448, Neg Dist: 4.6799
+2025-05-23 01:39:19 - INFO - Epoch 95/100
+2025-05-23 01:41:03 - INFO - Epoch 95 - Train Loss: 0.00910953, Pos Dist: 0.9855, Neg Dist: 4.4845
+2025-05-23 01:41:26 - INFO - Epoch 95 - Val Loss: 0.01075342, Pos Dist: 1.0708, Neg Dist: 4.4560
+2025-05-23 01:41:26 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_95.pt
+2025-05-23 01:41:26 - INFO - Epoch 96/100
+2025-05-23 01:43:10 - INFO - Epoch 96 - Train Loss: 0.00329280, Pos Dist: 1.0027, Neg Dist: 4.5795
+2025-05-23 01:43:34 - INFO - Epoch 96 - Val Loss: 0.01166723, Pos Dist: 1.0875, Neg Dist: 4.5250
+2025-05-23 01:43:34 - INFO - Epoch 97/100
+2025-05-23 01:45:17 - INFO - Epoch 97 - Train Loss: 0.00079844, Pos Dist: 1.0158, Neg Dist: 4.6620
+2025-05-23 01:45:40 - INFO - Epoch 97 - Val Loss: 0.00000000, Pos Dist: 1.0865, Neg Dist: 4.5500
+2025-05-23 01:45:40 - INFO - Epoch 98/100
+2025-05-23 01:47:22 - INFO - Epoch 98 - Train Loss: 0.00770135, Pos Dist: 1.0278, Neg Dist: 4.5039
+2025-05-23 01:47:45 - INFO - Epoch 98 - Val Loss: 0.01748231, Pos Dist: 1.0232, Neg Dist: 4.2142
+2025-05-23 01:47:45 - INFO - Epoch 99/100
+2025-05-23 01:49:29 - INFO - Epoch 99 - Train Loss: 0.00129921, Pos Dist: 1.0006, Neg Dist: 4.4524
+2025-05-23 01:49:52 - INFO - Epoch 99 - Val Loss: 0.01132605, Pos Dist: 1.0383, Neg Dist: 4.4756
+2025-05-23 01:49:52 - INFO - Epoch 100/100
+2025-05-23 01:51:34 - INFO - Epoch 100 - Train Loss: 0.00329496, Pos Dist: 1.0002, Neg Dist: 4.2492
+2025-05-23 01:51:56 - INFO - Epoch 100 - Val Loss: 0.00000000, Pos Dist: 1.0089, Neg Dist: 4.3235
+2025-05-23 01:51:57 - INFO - Saved checkpoint at /home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06/checkpoints/model_epoch_100.pt
+2025-05-23 01:51:57 - INFO - Training complete.

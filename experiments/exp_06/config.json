@@ -1,0 +1,22 @@
+
+{
+    "experiment_name":"triplet loss",
+    "experiment_description":"No black padding images, negative sample distacne 50",
+    "log_path":"experiments/exp_06/logs",
+    "data": {
+        "data_path":"/home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/data/train/keypoint-crps/train-patch-v2/crops_no_black",
+        "image_size": 512,
+        "batch_size": 8,
+        "num_workers": 2,
+        "data_length": 2000,
+        "val_length":400
+    },
+    "training":{
+        "loss":"triplet",
+        "lr":0.00001,
+        "epochs":100,
+        "savepath":"/home/savvas/SUPER-NAS/USERS/Chirag/PROJECTS/202504-spacenet9/data/spacenet9-void/experiments/exp_06"
+    }
+
+
+}
