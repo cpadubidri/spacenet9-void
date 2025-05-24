@@ -1,0 +1,6 @@
+2025-05-24 12:20:30 error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+2025-05-24 12:20:30 error: 
+2025-05-24 12:20:30 error: Error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+    at processSubmission (/home/ubuntu/tc-mm-processor/src/services/KafkaHandlerService.js:200:13)
+2025-05-24 12:20:30 error: Error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+    at processSubmission (/home/ubuntu/tc-mm-processor/src/services/KafkaHandlerService.js:200:13)

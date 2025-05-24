@@ -1,0 +1,11 @@
+2025-05-24 12:20:30 info: Processing the submission d09264db-1ff4-4cd5-b441-a7788d15e672 / phase: provisional / type: data
+2025-05-24 12:20:30 error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+2025-05-24 12:20:30 error: 
+2025-05-24 12:20:30 error: Error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+    at processSubmission (/home/ubuntu/tc-mm-processor/src/services/KafkaHandlerService.js:200:13)
+2025-05-24 12:20:30 error: Error: Wrong folder structure detected, missing "solution" folder for d09264db-1ff4-4cd5-b441-a7788d15e672.
+    at processSubmission (/home/ubuntu/tc-mm-processor/src/services/KafkaHandlerService.js:200:13)
+2025-05-24 12:20:30 info: Create Review with Negative Score
+2025-05-24 12:20:30 info: Creating Review for submission d09264db-1ff4-4cd5-b441-a7788d15e672 with score -1
+2025-05-24 12:20:31 info: Created Review for submission d09264db-1ff4-4cd5-b441-a7788d15e672 with score -1
+2025-05-24 12:20:31 info: Uploading artifacts for d09264db-1ff4-4cd5-b441-a7788d15e672
