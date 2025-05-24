@@ -9,6 +9,9 @@ experiments/test_01
 data/train/keypoint-crps/train-patch-v2/
 experiments/exp_02/*
 experiments/exp_04/*
+experiments/exp_06/checkpoints
+experiments/exp_06/tensorboard
+experiments/exp_06/models
 
 #tif files
 **.tif
@@ -24,7 +27,7 @@ experiments/test.py
 # experiments/test.ipynb
 src/training/train_unet.py
 src/models/unet.py
-
+tripletplot.png
 src/datafeeder/datafeeder_v0.py 
 
 #cache

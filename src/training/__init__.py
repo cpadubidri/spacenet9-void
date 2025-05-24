@@ -1,6 +1,6 @@
 from .train import train
 from .train_unet import train_unet
 from .train_triplet import train_triplet
-from .loss_fn import get_loss
+from .loss_fn import get_loss, CosineTripletLoss
 
-__all = ['train','get_loss','train_unet',"train_triplet"]
+__all = ['train','get_loss','train_unet',"train_triplet","CosineTripletLoss"]
