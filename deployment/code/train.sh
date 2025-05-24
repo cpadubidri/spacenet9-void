@@ -1,0 +1,1 @@
+echo "No training is needed"
