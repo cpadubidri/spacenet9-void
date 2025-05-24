@@ -105,24 +105,25 @@ class TripletLoss(torch.nn.Module):
 
 
 class CosineTripletLoss(nn.Module):
-    def __init__(self, reg_weight=0.1, reduction='mean'):
+    def __init__(self, reg_weight=0.1, margin=0.3, reduction='mean'):
         super().__init__()
         self.reg_weight = reg_weight
         self.reduction = reduction
+        self.margin = margin
 
     def forward(self, anchor, positive, negative):
-        # Targets for cosine similarity
-        target_pos = torch.ones(anchor.size(0)).to(anchor.device)
-        target_neg = -torch.ones(anchor.size(0)).to(anchor.device)
+        #cosine similarity losses
+        cosine_pos = F.cosine_similarity(anchor, positive, dim=1)
+        cosine_neg = F.cosine_similarity(anchor, negative, dim=1)
 
-        # Cosine similarity losses
-        loss_pos = F.cosine_embedding_loss(anchor, positive, target_pos, reduction=self.reduction)
-        loss_neg = F.cosine_embedding_loss(anchor, negative, target_neg, reduction=self.reduction)
+        loss = F.relu(cosine_neg - cosine_pos + self.margin).mean()
 
-        # Combine cosine loss terms
-        loss = (loss_pos + loss_neg) / 2
+        if self.reduction == 'mean':
+            loss = loss.mean()
+        elif self.reduction == 'sum':
+            loss = loss.sum()
 
-        # Positive Euclidean distance regularization
+        #positive Euclidean distance regularization
         pos_reg = (anchor - positive).pow(2).sum(dim=1).mean()
         loss += self.reg_weight * pos_reg
 
