@@ -15,7 +15,7 @@ class TripletDatafeeder(Dataset):
         self.debug = debug
         self.data_path = config.data["data_path"]
         self.image_size = config.data["image_size"]
-        self.min_offset = 50
+        self.min_offset = 100
         self.mode = mode.lower()
         
         data_list = pd.read_csv(os.path.join(self.data_path, 'file_list.csv'))['file_name']
@@ -108,3 +108,7 @@ def get_dataloader_v3(config, mode="train", debug=False):
     dataset = TripletDatafeeder(config, mode, debug)
     dataloader = DataLoader(dataset, batch_size=config.data["batch_size"], shuffle=True, num_workers=config.data["num_workers"])
     return dataloader
+
+
+
+# 

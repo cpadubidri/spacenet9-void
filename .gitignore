@@ -32,3 +32,28 @@ src/datafeeder/datafeeder_v0.py
 
 #cache
 **/__pycache__/
+
+#environment variables
+.env
+.env.*
+
+#generated mock data
+data/train/keypoint-crps/train-patch-v2/crops/*.tif
+data/train/keypoint-crps/train-patch-v2/crops/file_list.csv
+data/train/keypoint-crps/train-patch-v2/crops/README.md
+
+#logs and checkpoints
+experiments/exp_01/logs/*
+experiments/exp_01/models/*
+experiments/exp_01/checkpoints/*
+experiments/exp_01/tensorboard/*
+# Handle duplicate log directory structure
+experiments/exp_01/experiments/exp_01/logs/*
+# Specific log files
+experiments/exp_01/logs/log_samp.log
+# All log files anywhere
+**/*.log
+
+#helper scripts
+generate_mock_data.py
+prepare_data.py
