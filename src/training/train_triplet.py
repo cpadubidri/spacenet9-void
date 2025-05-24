@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from torch.utils.tensorboard import SummaryWriter
 import os
 from tqdm import tqdm
-from .loss_fn import TripletLoss
+from .loss_fn import TripletLoss, CosineTripletLoss
 
 
 def train_triplet(config_path, model, train_loader, val_loader):
@@ -24,7 +24,7 @@ def train_triplet(config_path, model, train_loader, val_loader):
     model.to(device)
 
     #init loss & optimizer
-    criterion = TripletLoss(margin=config.training.get("margin", 1.0)).to(device)
+    criterion = CosineTripletLoss(reg_weight=0.1).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=config.training['lr'])
 
     #init tensorBoard
@@ -60,6 +60,10 @@ def train_triplet(config_path, model, train_loader, val_loader):
 
             distance_pos = F.pairwise_distance(anchor_vec, positive_vec, p=2)
             distance_neg = F.pairwise_distance(anchor_vec, negative_vec, p=2)
+            cos_pos = F.cosine_similarity(anchor, positive, dim=1).mean().item()
+            cos_neg = F.cosine_similarity(anchor, negative, dim=1).mean().item()
+
+
 
             loss = criterion(anchor_vec, positive_vec, negative_vec)
             loss.backward()
@@ -68,18 +72,24 @@ def train_triplet(config_path, model, train_loader, val_loader):
             train_loss += loss.item()
             total_pos_dist += distance_pos.mean().item()
             total_neg_dist += distance_neg.mean().item()
+            total_pos_cos += cos_pos.mean().item()
+            total_neg_cos += cos_neg.mean().item()
             batch_count += 1
 
         avg_train_loss = train_loss / len(train_loader)
         avg_pos_dist = total_pos_dist / batch_count
         avg_neg_dist = total_neg_dist / batch_count
+        avg_pos_cos = total_pos_cos / batch_count
+        avg_neg_cos = total_neg_cos / batch_count
 
         writer.add_scalar('Loss/Train', avg_train_loss, epoch)
-        writer.add_histogram('Embedding/Anchor', anchor_vec.detach().cpu(), epoch)
-        writer.add_histogram('Embedding/Positive', positive_vec.detach().cpu(), epoch)
-        writer.add_histogram('Embedding/Negative', negative_vec.detach().cpu(), epoch)
+        writer.add_histogram('Embedding/Train_Anchor', anchor_vec.detach().cpu(), epoch)
+        writer.add_histogram('Embedding/Train_Positive', positive_vec.detach().cpu(), epoch)
+        writer.add_histogram('Embedding/Train_Negative', negative_vec.detach().cpu(), epoch)
         writer.add_scalar('Distance/Train_Pos', avg_pos_dist, epoch)
         writer.add_scalar('Distance/Train_Neg', avg_neg_dist, epoch)
+        writer.add_scalar('CosSim/Train_Pos', avg_pos_cos, epoch)
+        writer.add_scalar('CosSim/Train_Neg', avg_neg_cos, epoch)
 
         log.info(f"Epoch {epoch + 1} - Train Loss: {avg_train_loss:.8f}, Pos Dist: {avg_pos_dist:.4f}, Neg Dist: {avg_neg_dist:.4f}")
 
@@ -165,6 +175,11 @@ def train_triplet(config_path, model, train_loader, val_loader):
         avg_val_neg_dist = total_neg_dist / batch_count
 
         writer.add_scalar('Loss/Val', avg_val_loss, epoch)
+        writer.add_histogram('Embedding/Valid_Anchor', anchor_vec.detach().cpu(), epoch)
+        writer.add_histogram('Embedding/Valid_Positive', positive_vec.detach().cpu(), epoch)
+        writer.add_histogram('Embedding/Valid_Negative', negative_vec.detach().cpu(), epoch)
+        writer.add_scalar('Distance/Valid_Pos', avg_val_pos_dist, epoch)
+        writer.add_scalar('Distance/Valid_Neg', avg_val_neg_dist, epoch)
         log.info(f"Epoch {epoch + 1} - Val Loss: {avg_val_loss:.8f}, Pos Dist: {avg_val_pos_dist:.4f}, Neg Dist: {avg_val_neg_dist:.4f}")
 
         #save best model
