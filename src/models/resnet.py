@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
-
+import torch.nn.functional as F
 
 
 
@@ -76,7 +76,8 @@ class ResNet50Triplet2D(nn.Module):
 
         self.projection = nn.Sequential(
             nn.Conv2d(2048, embedding_dim, kernel_size=1),
-            nn.BatchNorm2d(embedding_dim),
+            # nn.BatchNorm2d(embedding_dim),
+            nn.GroupNorm(num_groups=8, num_channels=embedding_dim), #>> group norm
             nn.ReLU(inplace=True)
         )
 
@@ -86,8 +87,11 @@ class ResNet50Triplet2D(nn.Module):
 
         if global_pool:
             #for training triplet loss
-            return F.adaptive_avg_pool2d(emb_map, 1).squeeze(-1).squeeze(-1)  # [B, output_dim]
+            pooled = F.adaptive_avg_pool2d(emb_map, 1).squeeze(-1).squeeze(-1)  # [B, output_dim]
+            return F.normalize(pooled, p=2, dim=1)
         else:
             #for inference (CCM)
-            return emb_map  # [B, C, H, W]
+            # return emb_map  # [B, C, H, W]
+            norm_emb_map = F.normalize(emb_map, p=2, dim=1)  # Normalize along channel dim
+            return norm_emb_map  # [B, C, H, W]
 
